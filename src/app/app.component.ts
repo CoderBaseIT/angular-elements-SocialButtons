@@ -10,17 +10,16 @@ import { SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  content: SafeHtml;
+  content: SafeHtml; 
 
   title = 'app';
   constructor(injector: Injector, domsanitizer: DomSanitizer) {
     const SocialButtonElement = createCustomElement(SocialButtonsComponent, {injector: injector});
     customElements.define('social-buttons', SocialButtonElement);
     setTimeout(() => {
-  this.content = domsanitizer.bypassSecurityTrustHtml(`<social-buttons provider='gitkraken' link='https://linkedin.com'>
+  this.content =  domsanitizer.bypassSecurityTrustHtml(`<social-buttons provider='gitkraken' link='https://linkedin.com'>
   </social-buttons>`);
-
     }, 1000);
   }
-
 }
+ 

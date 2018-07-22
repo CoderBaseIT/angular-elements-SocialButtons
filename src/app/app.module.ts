@@ -2,7 +2,7 @@ import { environment } from './../environments/environment';
 import { AppComponent } from './app.component';
 import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injector } from '@angular/core';
+import { NgModule, Injector, ApplicationRef } from '@angular/core';
 import { SocialButtonsComponent } from './social-buttons/social-buttons.component';
 
 @NgModule({
@@ -14,17 +14,19 @@ import { SocialButtonsComponent } from './social-buttons/social-buttons.componen
     BrowserModule
   ],
   providers: [],
-  bootstrap: [environment.production ? []   :  AppComponent],
-  entryComponents: [ SocialButtonsComponent ]
+  entryComponents: [ AppComponent, SocialButtonsComponent ]
 })
-export class AppModule {
-  constructor(private injector: Injector) { }
+export class AppModule  {
+  constructor(private injector: Injector) {}
 
-ngDoBootstrap() {
-  if (environment.production) {
-  const SocialButtonElement = createCustomElement(SocialButtonsComponent, {injector: this.injector});
-  customElements.define('social-buttons', SocialButtonElement);
-}
+  ngDoBootstrap(app: ApplicationRef) {
+    if (environment.production) {
+      const SocialButtonElement = createCustomElement(SocialButtonsComponent, {injector: this.injector});
+      customElements.define('social-buttons', SocialButtonElement);
+    }
+    else {
+      app.bootstrap(AppComponent)
+    }
+  }
 
-}
 }
