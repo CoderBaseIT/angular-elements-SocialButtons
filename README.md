@@ -28,5 +28,26 @@ https://fontawesome.com/icons?d=gallery&s=brands
 ## Etape 3
 `ng generate component socialButtons`
 ## Etape 4
-Modifier appModule
+
+
+###Modifier AppModule
 Déclarer SocialButtonComponent dans entryComponents
+1)  bootstrap: [environment.production ? []   :  AppComponent],
+2) 
+entryComponents: [ SocialButtonsComponent ]
+3) 
+export class AppModule  {
+  constructor(private injector: Injector) {
+
+  }
+
+  ngDoBootstrap() {
+    if (environment.production) {
+      const SocialButtonElement = createCustomElement(SocialButtonsComponent, {injector: this.injector});
+      customElements.define('social-buttons', SocialButtonElement);
+    }
+  }
+
+}
+
+###
