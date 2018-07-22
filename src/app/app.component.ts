@@ -19,7 +19,6 @@ export class AppComponent {
     setTimeout(() => {
   this.content = domsanitizer.bypassSecurityTrustHtml(`<social-buttons provider='gitkraken' link='https://linkedin.com'>
   </social-buttons>`);
-
     }, 1000);
   }
 

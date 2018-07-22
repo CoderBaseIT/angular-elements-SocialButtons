@@ -18,3 +18,15 @@ Run all these script in once : `npm run all:element`
 
 ## List icon 
 https://fontawesome.com/icons?d=gallery&s=brands
+
+
+# Etapes
+## Etape 1
+`ng new socialApp` && `cd socialApp`
+## Etape 2
+`ng add @angular/elements`
+## Etape 3
+`ng generate component socialButtons`
+## Etape 4
+Modifier appModule
+Déclarer SocialButtonComponent dans entryComponents
