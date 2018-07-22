@@ -21,5 +21,4 @@ export class AppComponent {
   </social-buttons>`);
     }, 1000);
   }
-
 }
