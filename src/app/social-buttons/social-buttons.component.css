@@ -1,12 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
-.fa {
+.fab {
     padding: 20px;
     font-size: 30px;
     width: 50px;
     text-align: center;
     text-decoration: none;
     margin: 5px 2px;
+}
+
+.fa-round {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
 }
 
 .fa:hover {
@@ -114,7 +123,17 @@
     color: white;
 }
 
-.fa-rss {
-    background: #ff6600;
+.fa-gitlab {
+    background: black;
+    color: #F97D46;
+}
+
+.fa-amazon {
+    background: #febd69;
     color: white;
+}
+
+.fa-gitkraken {
+    background: black;
+    color: #20968B;
 }
