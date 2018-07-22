@@ -17,15 +17,12 @@ import { SocialButtonsComponent } from './social-buttons/social-buttons.componen
   entryComponents: [ AppComponent, SocialButtonsComponent ]
 })
 export class AppModule  {
-  constructor(private injector: Injector) {
-
-  }
+  constructor(private injector: Injector) {}
 
   ngDoBootstrap(app: ApplicationRef) {
     if (environment.production) {
       const SocialButtonElement = createCustomElement(SocialButtonsComponent, {injector: this.injector});
       customElements.define('social-buttons', SocialButtonElement);
-
     }
     else {
       app.bootstrap(AppComponent)
