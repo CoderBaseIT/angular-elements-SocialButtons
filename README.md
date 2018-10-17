@@ -86,3 +86,5 @@ les scripts package.json
 
 ### Etape 8 
     npm install concat fs-extra --save-dev
+### Etape 9 
+ Ajouter dans index.html   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
