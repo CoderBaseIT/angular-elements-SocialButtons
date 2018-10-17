@@ -56,10 +56,10 @@ export class AppModule  {
 ### Etape 6 
 construire build.js à la racine 
 
-const fs = require('fs-extra');
-const concat = require('concat');
+    const fs = require('fs-extra');
+    const concat = require('concat');
 
-(async function build() {
+    (async function build() {
     const files = [
         './dist/socialApp/runtime.js',
         './dist/socialApp/polyfills.js',
@@ -73,3 +73,6 @@ const concat = require('concat');
     await fs.copyFile('./dist/socialApp/styles.css', 'elements/styles.css');
 
 })()
+
+### Etape 7 
+les scripts package.json 
