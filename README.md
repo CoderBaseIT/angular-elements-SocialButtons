@@ -37,18 +37,20 @@ https://coderbaseit.github.io/elements/socialButtons/
 Déclarer SocialButtonComponent dans entryComponents
 1)  remove bootstrap: [AppComponent] dans app.module
 2) 
-entryComponents: [ SocialButtonsComponent ]
+entryComponents: [ SocialButtonsComponent , AppComponent]
 3) 
 export class AppModule  {
   constructor(private injector: Injector) {
 
   }
 
-  ngDoBootstrap() {
+  ngDoBootstrap(app: ApplicationRef) {
     if (environment.production) {
       const SocialButtonElement = createCustomElement(SocialButtonsComponent, {injector: this.injector});
       customElements.define('social-buttons', SocialButtonElement);
     }
+    else {
+    app.bootstrap(AppComponent)
   }
 
 }
@@ -88,3 +90,14 @@ les scripts package.json
     npm install concat fs-extra --save-dev
 ### Etape 9 
  Ajouter dans index.html   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+## Etape 10 
+modifiez target:es5 vers target:es2015 dans tsconfig.json
+### Etapes 11
+créer dossier elements et y copier le index.html 
+supprimez app-root et tester socialbutton balise attention au nom de la balise et les input provider et link 
+### Etape 12
+ajouter styles.css et social-buttons.js dans elements/social
+### Etape 13 
+npm run all:element 
+### Etape 14 
+Ajouter viewEncapsulation.None 
