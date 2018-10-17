@@ -32,7 +32,7 @@ https://fontawesome.com/icons?d=gallery&s=brands
 
 ###Modifier AppModule
 Déclarer SocialButtonComponent dans entryComponents
-1)  bootstrap: [environment.production ? []   :  AppComponent],
+1)  remove bootstrap: [AppComponent] dans app.module
 2) 
 entryComponents: [ SocialButtonsComponent ]
 3) 
