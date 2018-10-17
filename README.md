@@ -76,3 +76,10 @@ construire build.js à la racine
 
 ### Etape 7 
 les scripts package.json 
+
+        "build:element": "ng build --prod --output-hashing none && node build.js",
+        "start:element": "cd elements && http-server -o ",
+        "all:element": "npm run build:element && npm run start:element"
+
+### Etape 8 
+    npm install concat fs-extra --save-dev
